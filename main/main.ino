@@ -1,6 +1,6 @@
 
-const int AirValue = 520;   
-const int WaterValue = 260;  
+const int AirValue = 840;
+const int WaterValue = 520;
 int intervals = (AirValue - WaterValue)/3;   
 int soilMoistureValue = 0;
 
@@ -18,8 +18,8 @@ Serial.println("Hallo ich bin Lukas und dumm und ein HS: " + String(soilMoisture
 if(soilMoistureValue > WaterValue && soilMoistureValue < (WaterValue + intervals)) {
   Serial.println("Very Wet");
             digitalWrite(5, LOW);
-            digitalWrite(0, LOW);
-            digitalWrite(4, HIGH);
+            digitalWrite(4, LOW);
+            digitalWrite(0, HIGH);
   } else if(soilMoistureValue > (WaterValue + intervals) && soilMoistureValue < (AirValue - intervals))
 {
   Serial.println("Wet");
@@ -31,8 +31,8 @@ else if(soilMoistureValue < AirValue && soilMoistureValue > (AirValue - interval
 {
   Serial.println("Dry");
             digitalWrite(5, LOW);
-            digitalWrite(4, LOW);
-            digitalWrite(0, HIGH);
+            digitalWrite(0, LOW);
+            digitalWrite(4, HIGH);
 }
 delay(100);
 }
